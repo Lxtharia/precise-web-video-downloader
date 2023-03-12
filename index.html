@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Life can be so simple</title>
+	<meta name="description" content="Our first page">
+	<meta name="keywords" content="html tutorial template">
+	<!-- <link rel="stylesheet" href="https://github.com/jdan/98.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+	<!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"></script>
+</head>
+
+<body>
+
+	<h2>Life can be so simple</h2>
+	<div id=content>
+		<div style="width: 50%">
+			<input type="text" id="url_field" oninput="loadVideo()" value="" placeholder="Enter youtube url">
+			<label id="info_label"></label>
+		</div>
+
+		<div style="margin:20px">
+			<div id="player"></div>
+		</div>
+
+		<div id="controls">
+			<div class="time-setter-div">
+				<input type="time" step="0.001" id="start_time" value="00:00:00:000">
+				<button type="button" name="start_time_button" onclick="setStart()">Set Start Time!</button>
+			</div>
+			<div class="time-setter-div">
+				<input type="time" step="0.001" id="current_time" value="00:00:00:000">
+				<div class="playercontrols">
+					<button type="button" id="second_left_button" onclick="moveSeconds(-1)">	<< <br>S </button>
+					<button type="button" id="frame_left_button" onclick="moveFrames(-1)">	< <br>F	</button>
+					<button type="button" id="frame_right_button" onclick="moveFrames(1)">	> <br>F </button>
+					<button type="button" id="second_right_button" onclick="moveSeconds(1)">	>> <br>S </button>
+				</div>
+			</div>
+			<div class="time-setter-div">
+				<input type="time" step="0.001" id="end_time" value="00:00:00:000">
+				<button type="button" name="end_time_button" onclick="setEnd()">Set End Time!</button>
+			</div>
+		</div>
+
+		<div id="download_option_container">
+			<fieldset>
+				<legend>Select audio option:</legend>
+				<div>
+					<input type="radio" name="audio_radio" id="with_video_audio" checked onchange="selectAudioOption()">
+					<label for="with_video_audio">With Video+Audio</label>
+				</div>
+				<div>
+					<input type="radio" name="audio_radio" id="only_video" onchange="selectAudioOption()">
+					<label for="only_video">Only video</label>
+				</div>
+				<div>
+					<input type="radio"  name="audio_radio"  id="only_audio" onchange="selectAudioOption()">
+					<label for="only_audio">Only audio</label>
+				</div>
+			</div>
+		</fieldset>
+		<button type="button" id="download_button" onclick="downloadNow()">DOWNLOAD NOW!!!!</button><br>
+		<div style="width: 70%; display:flex; align-items:center">
+			<button name="copy_command" onclick="copyToClipboard()">📋</button>
+			<input type="text" id="download_command" value="">
+		</div>
+	</div>
+
+	</div>
+	<!-- <script type="text/javascript" src="download.js"></script> -->
+	<script src="player-control.js"></script>
+	<footer></footer>
+</body>
+
+</html>

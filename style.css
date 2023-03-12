@@ -1,0 +1,99 @@
+html{
+    background-color: #0c0c0d;
+    color: #cccccc;
+}
+
+h2 {
+    margin-left: 200px;
+}
+
+
+input {
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #cccccc;
+    background-color: #1c1326;
+}
+
+button {
+    padding: 5px;
+    margin: 0px 3px;
+    color: #cccccc;
+    background-color: #63173e;
+    border: #3d0d26 solid;
+}
+
+#content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#controls {
+    width: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#download_option_container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* #download_options {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+} */
+
+fieldset {
+    display: flex;
+}
+fieldset div {
+    margin: 0px 10px;
+}
+fieldset div input {
+    margin: 5px 0px 5px 10px;
+}
+
+input[type=text] {
+    width:100%;
+    margin: 10px;
+}
+
+
+.time-setter-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 30px;
+}
+
+.playercontrols {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ytp-pause-overlay-container {
+  display: none;
+}
+
+
+#info_label {
+    margin: 0px 0px 0px 20px;
+    color: #707070;
+}
+
+footer {
+    margin-top: 300px;
+}
