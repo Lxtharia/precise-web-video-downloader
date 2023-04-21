@@ -17,7 +17,7 @@
 	<div id=content>
 
 
-		<div style="max-width: 93%; min-width: 50%;">
+		<div style="max-width: 93%; min-width: 50%; margin-bottom: 10px;">
 			<input type="text" id="url_field" oninput="loadVideo()" value="" placeholder="Enter youtube url">
 			<label id="info_label"></label>
 		</div>
@@ -34,7 +34,7 @@
 				<button type="button" name="start_time_button" onclick="setStart()">Set Start Time!</button>
 			</div>
 			<div class="time-setter-div">
-				<input type="time" step="0.001" id="current_time" value="00:00:00:000">
+				<input type="time" readonly step="0.001" id="current_time" value="00:00:00:000">
 				<div class="playercontrols">
 					<button type="button" id="second_left_button" onclick="moveSeconds(-1)">	<< <br>S </button>
 					<button type="button" id="frame_left_button" onclick="moveFrames(-1)">	< <br>F	</button>
@@ -71,13 +71,27 @@
 		<button type="button" id="download_button" onclick="downloadNow()">DOWNLOAD NOW!!!!</button><br>
 		
 
-		<div style="width: 70%; display:flex; align-items:center">
+		<div style="min-width: 70%; display:flex; align-items:center">
 			<button name="copy_command" onclick="copyToClipboard()">📋</button>
 			<input type="text" id="download_command" value="">
 		</div>
 
+	<div>
+		<h3> Controls: </h3>
+		<ul>
+		<li>Paste Youtube Url</li>
+		<li>Let is play, navigate with mouse, whatever</li>
+		<li> Pause/Unpause with <b>SPACE</b></li>
+		<li>Navigate frame by frame with <b>. (DOT)</b> and <b>, (COMMA)</b></li>
+		<li>Navigate second by second with the <b>Arrow Keys</b> (Note: If the player is focused, it will skip by 5 or 10 seconds and won't catch Start/End key bindings) </li>
+		<li>Set Start and End Time with <b>S</b> and <b>E</b></li>
+		<li>Generate <a href=https://github.com/yt-dlp/yt-dlp style="color: mediumvioletred;">yt-dlp</a> command and execute it in on the command line, it will download it in the current folder by default</li>
+		<li>If the time is displayed 12:00 AM/PM, instead of 00:00, its cause you cant change that in html/css so it's your locale settings. I find it very annoying.</li>
+		</ul>
 
 	</div>
+
+
 	</div>
 	<!-- <script type="text/javascript" src="download.js"></script> -->
 	<script src="player-control.js"></script>
