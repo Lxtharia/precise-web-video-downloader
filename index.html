@@ -3,8 +3,7 @@
 
 <head>
 	<title>Life can be so simple</title>
-	<meta name="description" content="Our first page">
-	<meta name="keywords" content="html tutorial template">
+	<meta name="description" content="This site won't download itself, it leaves the executing to you!!">
 	<!-- <link rel="stylesheet" href="https://github.com/jdan/98.css" /> -->
 	<link rel="stylesheet" href="./style.css" />
 	<!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
@@ -16,14 +15,18 @@
 
 	<h2><a href="https://pbs.twimg.com/media/Fo9CJrLWYAYxIq8?format=jpg&name=large">Life can be so simple</a></h2>
 	<div id=content>
-		<div style="width: 50%">
+
+
+		<div style="max-width: 93%; min-width: 50%;">
 			<input type="text" id="url_field" oninput="loadVideo()" value="" placeholder="Enter youtube url">
 			<label id="info_label"></label>
 		</div>
 
-		<div style="margin:20px">
-			<div id="player"></div>
+
+		<div style="max-height: 70vh; width:80vw; aspect-ratio:16 / 10;">
+			<div id="player" style="margin:auto; width:100%; height:100%"></div>
 		</div>
+
 
 		<div id="controls">
 			<div class="time-setter-div">
@@ -45,6 +48,7 @@
 			</div>
 		</div>
 
+
 		<div id="download_option_container">
 			<fieldset>
 				<legend>Select audio option:</legend>
@@ -62,13 +66,18 @@
 				</div>
 			</div>
 		</fieldset>
+		
+
 		<button type="button" id="download_button" onclick="downloadNow()">DOWNLOAD NOW!!!!</button><br>
+		
+
 		<div style="width: 70%; display:flex; align-items:center">
 			<button name="copy_command" onclick="copyToClipboard()">📋</button>
 			<input type="text" id="download_command" value="">
 		</div>
-	</div>
 
+
+	</div>
 	</div>
 	<!-- <script type="text/javascript" src="download.js"></script> -->
 	<script src="player-control.js"></script>

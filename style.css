@@ -71,7 +71,8 @@ fieldset div input {
 
 input[type=text] {
     width:100%;
-    margin: 10px;
+    margin: 10px auto;
+	display: block;
 }
 
 
