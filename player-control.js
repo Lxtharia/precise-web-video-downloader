@@ -7,7 +7,8 @@ var player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        videoId: 'M7lc1UVf-VE',
+        // videoId: 'M7lc1UVf-VE',
+        videoId: 'NAh9oLs67Cw',
         modestbranding: 1,
         showinfo: 0,
         events: {
@@ -17,7 +18,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-let video_url = "https://www.youtube.com/watch?v=Tlu1ZfYr6vA"
+let video_url = "https://youtu.be/NAh9oLs67Cw"
 let video_duration = 0
 let current_time;
 let start_time = 0;
