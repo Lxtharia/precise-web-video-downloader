@@ -32,6 +32,7 @@
 			<div class="time-setter-div">
 				<input type="time" step="0.001" id="start_time" value="00:00:00:000">
 				<button type="button" name="start_time_button" onclick="setStart()">Set Start Time!</button>
+				<button type="button" name="jump_start_button" onclick="jumpToStart()">Jump to Start</button>
 			</div>
 			<div class="time-setter-div">
 				<input type="time" readonly step="0.001" id="current_time" value="00:00:00:000">
@@ -45,6 +46,10 @@
 			<div class="time-setter-div">
 				<input type="time" step="0.001" id="end_time" value="00:00:00:000">
 				<button type="button" name="end_time_button" onclick="setEnd()">Set End Time!</button>
+				<div>
+					<input type="checkbox" id="stop_at_end_checkbox" checked onchange="toggleStopAtEnd()">
+					<label for="stop_at_end_checkbox">Stop playback at End time</label>
+				</div>
 			</div>
 		</div>
 

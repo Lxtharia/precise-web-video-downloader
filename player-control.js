@@ -22,6 +22,7 @@ let video_duration = 0
 let current_time;
 let start_time = 0;
 let end_time = 0;
+let doStopAtEndTime = true; //the checkbox should be set to checked in the html as well
 let currentTimeField = document.getElementById("current_time")
 let startTimeField = document.getElementById("start_time")
 let endTimeField = document.getElementById("end_time")
@@ -33,7 +34,7 @@ let framerate = 30 //we will just asume cause i got no fucking clue how?!
 
 function onPlayerReady(){
     // start always updating the current time
-    update_info_clock = setInterval(updatePlayerInfo, 50);
+    player_clock = setInterval(playerLoop, 50);
     current_time = player.getCurrentTime();
     video_duration = player.getDuration();
 
@@ -42,9 +43,11 @@ function onPlayerReady(){
     setStart();
 }
 
-function updatePlayerInfo() {
+function playerLoop() {
     current_time = player.getCurrentTime();
     currentTimeField.value = formatTimeToString(current_time);
+	if (doStopAtEndTime && current_time >= end_time) 
+		player.pauseVideo();
 }
 
 function formatTimeToString(time) {
@@ -89,13 +92,21 @@ function setEnd(){
     endTimeField.value = formatTimeToString(end_time)
 }
 
+function jumpToStart() {
+	player.seekTo(start_time);
+}
+
+function toggleStopAtEnd() {
+	doStopAtEndTime = !doStopAtEndTime;
+}
+
 function selectAudioOption(){
     if(document.getElementById('with_video_audio').checked) {
-        formatOptions = "" // as the default is "bv*+ba/b";
+        formatOptions = " --remux-video mp4 " // as the default is "bv*+ba/b";
     }else if(document.getElementById('only_video').checked) {
-        formatOptions = ` -f "bv" `
+        formatOptions = ` -f bv --remux-video mp4 `
     }else if(document.getElementById('only_audio').checked) {
-        formatOptions = ` -xf "ba" `
+        formatOptions = ` -x --audio-format mp3 `
     }
 }
 
@@ -122,6 +133,7 @@ function onKeyDown(event){
         case '.':
             moveFrames(1);
             break;
+		case 'k':
         case ' ':
             event.preventDefault();
             if (player.getPlayerState() == 1)   player.pauseVideo();
@@ -140,11 +152,17 @@ function onKeyDown(event){
         case 's':
             setStart();
             break;
+		case 'S':
+			jumpToStart();
+			break;
         case 'e':
             setEnd();
             break;
         case '/':
             urlField.focus();
+			urlField.select();
+			event.preventDefault();
+			event.stopPropagation();
             break;
         default:
             console.log(event);
