@@ -4,17 +4,20 @@ html{
 }
 
 h2 {
-    margin-left: 200px;
+    /*margin-left: 200px;*/ 
+	text-align: center;;
+    color: #EF7675;
+
 }
 
 h2 a {
     text-decoration: none;
-    color: #cccccc;
+    color: #EF7675;
 }
 
 a {
 	color: #EF7675;
-/*	text-decoration: none; */
+	text-decoration: none;
 }
 
 input {

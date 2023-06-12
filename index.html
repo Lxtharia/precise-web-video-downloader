@@ -13,7 +13,7 @@
 
 <body>
 
-	<h2><a href="https://pbs.twimg.com/media/Fo9CJrLWYAYxIq8?format=jpg&name=large">Life can be so <span style="color: #EF7675">simple</span></a></h2>
+	<h2><a href="https://pbs.twimg.com/media/Fo9CJrLWYAYxIq8?format=jpg&name=large"><span style="color:#EB96AE;">Life</span> can be so <span style="color: #E44645">simple</span></a></h2>
 	<div id=content>
 
 
@@ -32,22 +32,22 @@
 			<div class="time-setter-div">
 				<input type="time" step="0.001" id="start_time" value="00:00:00:000">
 				<div style="min-width: 70%; display: flex; flex-direction: column;">
-				<button type="button" name="start_time_button" onclick="setStart()">Set Start Time!</button>
-				<button type="button" name="jump_start_button" onclick="jumpToStart()">Jump to Start</button>
+				<button type="button" name="start_time_button" onclick="setStart()">Set Start Time! [s]</button>
+				<button type="button" name="jump_start_button" onclick="jumpToStart()">Jump to Start! [S]</button>
 				</div>
 			</div>
 			<div class="time-setter-div">
 				<input type="time" readonly step="0.001" id="current_time" value="00:00:00:000">
 				<div class="playercontrols">
-					<button type="button" id="second_left_button" onclick="moveSeconds(-1)">	<< <br>S </button>
-					<button type="button" id="frame_left_button" onclick="moveFrames(-1)">	< <br>F	</button>
-					<button type="button" id="frame_right_button" onclick="moveFrames(1)">	> <br>F </button>
-					<button type="button" id="second_right_button" onclick="moveSeconds(1)">	>> <br>S </button>
+					<button type="button" id="second_left_button" onclick="moveSeconds(-1)">	<< <br>1 Sec<br>[Left]</button>
+					<button type="button" id="frame_left_button" onclick="moveFrames(-1)">	< <br>Frame<br> [ , ]</button>
+					<button type="button" id="frame_right_button" onclick="moveFrames(1)">	> <br>Frame<br> [ . ] </button>
+					<button type="button" id="second_right_button" onclick="moveSeconds(1)">	>> <br>1 Sec<br>[Right]</button>
 				</div>
 			</div>
 			<div class="time-setter-div">
 				<input type="time" step="0.001" id="end_time" value="00:00:00:000">
-				<button type="button" name="end_time_button" onclick="setEnd()">Set End Time!</button>
+				<button type="button" name="end_time_button" onclick="setEnd()">Set End Time! [e]</button>
 				<div>
 					<input type="checkbox" id="stop_at_end_checkbox" checked onchange="toggleStopAtEnd()">
 					<label for="stop_at_end_checkbox">Stop playback at End time</label>
@@ -74,7 +74,7 @@
 			</fieldset>
 			<button type="button" id="download_button" onclick="downloadNow()">DOWNLOAD NOW!!!!</button><br>
 			<input type="text" id="download_command" value="">
-			<button name="copy_command" onclick="copyToClipboard()">C o p y  /  C o p y </button>
+			<button name="copy_command" onclick="copyToClipboard()">/ / C o p y  /  C o p y / /</button>
 		</div>
 	<div>
 		<h3> Controls: </h3>
