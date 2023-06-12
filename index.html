@@ -13,7 +13,7 @@
 
 <body>
 
-	<h2><a href="https://pbs.twimg.com/media/Fo9CJrLWYAYxIq8?format=jpg&name=large">Life can be so simple</a></h2>
+	<h2><a href="https://pbs.twimg.com/media/Fo9CJrLWYAYxIq8?format=jpg&name=large">Life can be so <span style="color: #EF7675">simple</span></a></h2>
 	<div id=content>
 
 
@@ -31,8 +31,10 @@
 		<div id="controls">
 			<div class="time-setter-div">
 				<input type="time" step="0.001" id="start_time" value="00:00:00:000">
+				<div style="min-width: 70%; display: flex; flex-direction: column;">
 				<button type="button" name="start_time_button" onclick="setStart()">Set Start Time!</button>
 				<button type="button" name="jump_start_button" onclick="jumpToStart()">Jump to Start</button>
+				</div>
 			</div>
 			<div class="time-setter-div">
 				<input type="time" readonly step="0.001" id="current_time" value="00:00:00:000">
@@ -55,7 +57,7 @@
 
 
 		<div id="download_option_container">
-			<fieldset>
+			<fieldset style="margin-bottom: 10px;">
 				<legend>Select audio option:</legend>
 				<div>
 					<input type="radio" name="audio_radio" id="with_video_audio" checked onchange="selectAudioOption()">
@@ -69,29 +71,25 @@
 					<input type="radio"  name="audio_radio"  id="only_audio" onchange="selectAudioOption()">
 					<label for="only_audio">Only audio</label>
 				</div>
-			</div>
-		</fieldset>
-		
-
-		<button type="button" id="download_button" onclick="downloadNow()">DOWNLOAD NOW!!!!</button><br>
-		
-
-		<div style="min-width: 70%; display:flex; align-items:center">
-			<button name="copy_command" onclick="copyToClipboard()">📋</button>
+			</fieldset>
+			<button type="button" id="download_button" onclick="downloadNow()">DOWNLOAD NOW!!!!</button><br>
 			<input type="text" id="download_command" value="">
+			<button name="copy_command" onclick="copyToClipboard()">C o p y  /  C o p y </button>
 		</div>
-
 	<div>
 		<h3> Controls: </h3>
 		<ul>
 		<li>Paste Youtube Url</li>
-		<li>Let is play, navigate with mouse, whatever</li>
-		<li> Pause/Unpause with <b>SPACE</b></li>
+		<li>Let it play, navigate with mouse, whatever</li>
+		<li>Play/Pause with <b>SPACE</b> or <b>k</b></li>
 		<li>Navigate frame by frame with <b>. (DOT)</b> and <b>, (COMMA)</b></li>
 		<li>Navigate second by second with the <b>Arrow Keys</b> (Note: If the player is focused, it will skip by 5 or 10 seconds and won't catch Start/End key bindings) </li>
-		<li>Set Start and End Time with <b>S</b> and <b>E</b></li>
-		<li>Generate <a href=https://github.com/yt-dlp/yt-dlp style="color: mediumvioletred;">yt-dlp</a> command and execute it in on the command line, it will download it in the current folder by default</li>
-		<li>If the time is displayed 12:00 AM/PM, instead of 00:00, its cause you cant change that in html/css so it's your locale settings. I find it very annoying.</li>
+		<li>Set Start and End Time with <b>s</b> and <b>e</b></li>
+		<li>Jump to start with (capital) <b>S</b></li>
+		<li>Pressing the DOWNLOAD button will generate a <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> command </li>
+		<li>(It needs to be installed and added to PATH so it can be called anywhere from the command line) "<a href="https://www.google.com/search?client=firefox-b-d&q=how+to+add+binaries+to+path+windows">What?</a>"</li>
+		<li>Copy it and execute it in on the command line, it will download the video/audio in the current folder by default</li>
+		<li>If the time is displayed as 12:00 AM/PM, instead of 00:00, this is due to your locale settings, I can't change that with html/css. I find it very annoying.</li>
 		</ul>
 
 	</div>

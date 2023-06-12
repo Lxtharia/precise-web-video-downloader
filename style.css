@@ -12,6 +12,10 @@ h2 a {
     color: #cccccc;
 }
 
+a {
+	color: #EF7675;
+/*	text-decoration: none; */
+}
 
 input {
     padding: 10px;
@@ -23,10 +27,20 @@ input {
 
 button {
     padding: 5px;
-    margin: 0px 3px;
-    color: #cccccc;
-    background-color: #63173e;
-    border: #3d0d26 solid;
+    margin: 3px 3px;
+    color: #000000;
+    background-color: #EF7675;
+    border: #E44645 solid;
+    font-weight: bold;
+}
+
+
+div.playercontrols {
+	width: 100%;
+}
+
+div.playercontrols button {
+	width: 25%
 }
 
 #content{
@@ -45,7 +59,7 @@ button {
 }
 
 #download_option_container {
-    width: 80%;
+    min-width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,6 +76,7 @@ button {
 
 fieldset {
     display: flex;
+	margin-bottom: 10px;
 }
 fieldset div {
     margin: 0px 10px;
