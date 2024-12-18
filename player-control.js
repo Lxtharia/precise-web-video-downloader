@@ -69,7 +69,9 @@ function loadVideo(){
     video_url = urlField.value;
     videoId = getVideoIdFromUrl(video_url);
     if (videoId !== false) {
-        player.loadVideoById(videoId);
+        // player.loadVideoById(videoId);
+        var elem_ply = document.getElementById("player");
+        elem_ply.setAttribute("src", "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&autoplay=1&widgetid=1&disablekb=1&rel=0");
     } else if (urlField.value != "") {
         infoLabel.innerText = "Please enter a valid youtube url"
     }
